@@ -2,7 +2,7 @@ import axios from 'axios';
 
 
 export async function getStaticProps() {
-    const res = await axios.get('https://spring-boot-mysql-server-part0.herokuapp.com/api/books');
+    const res = await axios.get(process.env.URI);
     const { data } = await res;
     console.log(data);
     return {
@@ -15,8 +15,8 @@ export async function getStaticProps() {
 const Book = ({ data }) => {
     return (
         <div className="container">
-            {data.map(book => (
-                <li key={book.id}>{book.title}</li>
+            {data.data.map(book => (
+                <li key={book._id}>{book.title}</li>
             ))}
         </div>
     )
