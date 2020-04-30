@@ -15,9 +15,10 @@ export async function getServerSideProps() {
 const Book = ({ data }) => {
     return (
         <div className="container">
-            {data.data.map(book => (
-                <li key={book._id}>{book.title}</li>
-            ))}
+            hi
+            {/*{data.data.map(book => (*/}
+            {/*    <li key={book._id}>{book.title}</li>*/}
+            {/*))}*/}
         </div>
     )
 };
