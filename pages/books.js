@@ -2,7 +2,7 @@ import axios from 'axios';
 
 
 export async function getStaticProps() {
-    const res = await axios.get(process.env.VERCEL_URL);
+    const res = await axios.get(`${process.env.VERCEL_URL}/api/notes`);
     const { data } = await res;
     console.log(data);
     return {
