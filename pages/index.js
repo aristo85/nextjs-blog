@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Card, CardBody, CardTitle, Button, Row, Col } from "reactstrap";
 import { getAllNotes } from "../store/allNotes";
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
     const notes = await getAllNotes();
     return {
         props: {

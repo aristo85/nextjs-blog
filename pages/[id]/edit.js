@@ -101,16 +101,16 @@ class Edit extends Component {
 
 export default withRouter(Edit);
 
-// export async function getStaticPaths() {
-//     // Return a list of possible value for id (paths = [{params: {id: 'ssg-ssr'}}, {params: {id: 'pre-rendering'}}])
-//     const paths = await getAllPaths();
-//     // const paths = [{params: {id: 'ssg-ssr'}}, {params: {id: 'pre-rendering'}}]
-//     return {
-//         paths,
-//         fallback: false
-//     }
-// }
-export async function getServerSideProps({ params }) {
+export async function getStaticPaths() {
+    // Return a list of possible value for id (paths = [{params: {id: 'ssg-ssr'}}, {params: {id: 'pre-rendering'}}])
+    const paths = await getAllPaths();
+    // const paths = [{params: {id: 'ssg-ssr'}}, {params: {id: 'pre-rendering'}}]
+    return {
+        paths,
+        fallback: false
+    }
+}
+export async function getStaticProps({ params }) {
     // Fetch necessary data for the blog post using params.id
     const { data } = await getNoteById(params.id);
     return {props: {data}}
