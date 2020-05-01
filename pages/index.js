@@ -1,14 +1,12 @@
 import Link from "next/link";
 import { Card, CardBody, CardTitle, Button, Row, Col } from "reactstrap";
-import axios from "axios";
+import { getAllNotes } from "../store/allNotes";
 
 export async function getStaticProps() {
-    const res = await axios.get(process.env.URI);
-    const { data } = await res;
-    console.log(data.data);
+    const notes = await getAllNotes();
     return {
         props: {
-            notes: data.data
+            notes
         },
     }
 }
