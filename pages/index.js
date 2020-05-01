@@ -26,9 +26,9 @@ export default function Index({notes}) {
                             </CardTitle>
                             <Row>
                                 <Col xs="6">
-                                    {/*<Link href={`/${note._id}`}>*/}
+                                    <Link href={`/${note._id}`}>
                                         <Button block color="primary">View</Button>
-                                    {/*</Link>*/}
+                                    </Link>
                                 </Col>
                                 <Col>
                                     {/*<Link href={`/${note._id}/edit`}>*/}

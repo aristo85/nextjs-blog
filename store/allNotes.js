@@ -2,7 +2,23 @@ import axios from 'axios';
 
 export const getAllNotes = async () => {
     const res = await axios.get(process.env.URI);
-    const { data } = await res;
-    // console.log(res.data);
-    return data.data;
+    const { data } = await res.data;
+
+    return data;
+};
+
+export const getAllPaths = async () => {
+    const data = await getAllNotes();
+    return data.map(note => {
+        return {
+            params: {
+                id: note._id
+            }
+        }
+    });
+};
+
+export const getNoteById = async (id) => {
+    const res = await axios.get(`${process.env.URI}/${id}`)
+    return res.data;
 };
