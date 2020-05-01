@@ -22,7 +22,7 @@ class Note extends Component {
     // handleDelete = () => {
     //     const pid = this.props.router.query.id;
     //     try {
-    //         axios.delete(`${process.env.URI}/${pid}`);
+    //         axios.delete(`${process.env.URI}/api/notes/${pid}`);
     //         this.setState({
     //             isDeleting: true
     //         });
@@ -36,23 +36,6 @@ class Note extends Component {
         return (
             <div className="container text-center">
                 hi
-                {/*{this.state.isDeleting*/}
-                {/*    ? <Spinner color="success" className="spinner" />*/}
-                {/*    : <>*/}
-                {/*        <h1>{this.props.data.title}</h1>*/}
-                {/*        <p>{this.props.data.description}</p>*/}
-                {/*        <Button className="btn-danger" onClick={this.toggle}>Delete</Button>*/}
-                {/*        <Modal isOpen={this.state.modal} toggle={this.toggle}>*/}
-                {/*            <ModalBody>*/}
-                {/*                Are you sure?*/}
-                {/*            </ModalBody>*/}
-                {/*            <ModalFooter>*/}
-                {/*                <Button color="primary" onClick={this.handleDelete}>Delete</Button>{' '}*/}
-                {/*                <Button color="secondary" onClick={this.toggle}>Cancel</Button>*/}
-                {/*            </ModalFooter>*/}
-                {/*        </Modal>*/}
-                {/*    </>*/}
-                {/*}*/}
             </div>
         );
     }

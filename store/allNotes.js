@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export const getAllNotes = async () => {
-    const res = await axios.get(`${process.env.URI}/api/notes`);
+    const res = await axios.get(`${process.env.VERCEL_URL}/api/notes`);
     const { data } = await res.data;
 
     return data;
@@ -19,6 +19,6 @@ export const getAllPaths = async () => {
 };
 
 export const getNoteById = async (id) => {
-    const res = await axios.get(`${process.env.URI}/${id}`);
+    const res = await axios.get(`${process.env.URI}/api/notes/${id}`);
     return res.data;
 };
