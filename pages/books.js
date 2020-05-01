@@ -2,7 +2,7 @@ import axios from 'axios';
 
 
 export async function getServerSideProps() {
-    const res = await axios.get(`${process.env.VERCEL_URL}/api/notes`);
+    const res = await axios.get('api/notes');
     const { data } = await res;
     console.log(data);
     return {
