@@ -1,40 +1,23 @@
-import Head from 'next/head'
-import Layout, { siteTitle } from '../components/layout'
-import utilStyles from '../styles/utils.module.css'
-import { getSortedPostsData } from '../lib/posts'
-import Link from 'next/link'
-import Date from '../components/date'
+
+import axios from "axios";
 
 export async function getStaticProps() {
-    const allPostsData = getSortedPostsData()
+    const res = await axios.get(process.env.URI);
+    const { data } = await res;
+    console.log(data.data);
     return {
         props: {
-            allPostsData
-        }
+            data: data.data
+        },
     }
 }
 
-export default function Home({ allPostsData }) {
+export default function Home({data}) {
     return (
-        <Layout home>
-            <Head>…</Head>
-            <section className={utilStyles.headingMd}>…</section>
-            <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-                <h2 className={utilStyles.headingLg}>Blog</h2>
-                <ul className={utilStyles.list}>
-                    {allPostsData.map(({ id, date, title }) => (
-                        <li className={utilStyles.listItem} key={id}>
-                            <Link href="/posts/[id]" as={`/posts/${id}`}>
-                                <a>{title}</a>
-                            </Link>
-                            <br />
-                            <small className={utilStyles.lightText}>
-                                <Date dateString={date} />
-                            </small>
-                        </li>
-                    ))}
-                </ul>
-            </section>
-        </Layout>
+        <di>
+            {data.map(book => (
+                <li key={book._id}>{book.title}</li>
+            ))}
+        </di>
     )
 }
