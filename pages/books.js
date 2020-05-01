@@ -16,9 +16,9 @@ const Book = ({ data }) => {
     return (
         <div className="container">
             hi
-            {/*{data.data.map(book => (*/}
-            {/*    <li key={book._id}>{book.title}</li>*/}
-            {/*))}*/}
+            {data.data.map(book => (
+                <li key={book._id}>{book.title}</li>
+            ))}
         </div>
     )
 };
