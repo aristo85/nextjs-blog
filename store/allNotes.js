@@ -19,6 +19,6 @@ export const getAllPaths = async () => {
 };
 
 export const getNoteById = async (id) => {
-    const res = await axios.get(`${process.env.URI}/${id}`)
+    const res = await axios.get(`${process.env.URI}/${id}`);
     return res.data;
 };
