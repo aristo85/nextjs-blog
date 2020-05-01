@@ -31,9 +31,9 @@ export default function Index({notes}) {
                                     </Link>
                                 </Col>
                                 <Col>
-                                    {/*<Link href={`/${note._id}/edit`}>*/}
+                                    <Link href="/[id]/edit" as={`/${note._id}/edit`}>
                                         <Button block color="primary">Edit</Button>
-                                    {/*</Link>*/}
+                                    </Link>
                                 </Col>
                             </Row>
                         </CardBody>
