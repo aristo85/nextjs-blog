@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
     const res = await axios.get(process.env.URI);
     const { data } = await res;
     console.log(data.data);
