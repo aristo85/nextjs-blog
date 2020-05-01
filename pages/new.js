@@ -1,7 +1,7 @@
-import Link from "next/link";
+// import Link from "next/link";
 import { useState, useEffect } from 'react';
 import React, {Component} from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 import fetch from 'isomorphic-unfetch';
 import { useRouter } from "next/router";
 import {Form, Spinner, FormGroup, Input, Label, Col, Button, FormFeedback} from "reactstrap";
@@ -41,7 +41,7 @@ const NewNote = () => {
                 },
                 body: JSON.stringify(form)
             });
-            router.push('/');
+            await router.push('/');
         }catch (e) {
             console.log(e);
         }
