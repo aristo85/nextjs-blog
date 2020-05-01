@@ -14,10 +14,10 @@ export async function getStaticProps() {
 
 export default function Home({data}) {
     return (
-        <di>
+        <div>
             {data.map(book => (
                 <li key={book._id}>{book.title}</li>
             ))}
-        </di>
+        </div>
     )
 }
