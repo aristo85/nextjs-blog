@@ -99,7 +99,7 @@ class Edit extends Component {
     }
 }
 
-// export default withRouter(Edit);
+export default withRouter(Edit);
 //
 // export async function getStaticPaths() {
 //     // Return a list of possible value for id (paths = [{params: {id: 'ssg-ssr'}}, {params: {id: 'pre-rendering'}}])
