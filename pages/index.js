@@ -1,17 +1,20 @@
 import Link from "next/link";
 import { Card, CardBody, CardTitle, Button, Row, Col } from "reactstrap";
 import { getAllNotes } from "../store/allNotes";
+import axios from "axios";
 
-export async function getStaticProps() {
-    const notes = await getAllNotes();
-    return {
-        props: {
-            notes
-        },
-    }
-}
 
-export default function Index({notes}) {
+
+// export async function getStaticProps() {
+//     const notes = await getAllNotes();
+//     return {
+//         props: {
+//             notes
+//         },
+//     }
+// }
+
+const Index = ({notes}) => {
     return (
        <div className="container">
         <h1>Notes</h1>
@@ -26,14 +29,14 @@ export default function Index({notes}) {
                             </CardTitle>
                             <Row>
                                 <Col xs="6">
-                                    <Link href="/[id]" as={`/${note._id}`}>
+                                    {/*<Link href="/[id]" as={`/${note._id}`}>*/}
                                         <Button block color="primary">View</Button>
-                                    </Link>
+                                    {/*</Link>*/}
                                 </Col>
                                 <Col>
-                                    <Link href="/[id]/edit" as={`/${note._id}/edit`}>
+                                    {/*<Link href="/[id]/edit" as={`/${note._id}/edit`}>*/}
                                         <Button block color="primary">Edit</Button>
-                                    </Link>
+                                    {/*</Link>*/}
                                 </Col>
                             </Row>
                         </CardBody>
@@ -44,4 +47,12 @@ export default function Index({notes}) {
     </Row>
     </div>
     )
+}
+
+export default Index;
+
+Index.getInitialProps = async () => {
+    const res = await axios.get(`${process.env.URI}/api/notes`);
+    const { data } = await res.data;
+    return { notes: data }
 }
