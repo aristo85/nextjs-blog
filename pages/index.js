@@ -52,7 +52,7 @@ const Index = ({notes}) => {
 export default Index;
 
 Index.getInitialProps = async () => {
-    const res = await axios.get(`${process.env.URI}/api/notes`);
+    const res = await axios.get(`https://morning-springs-53145.herokuapp.com/api/notes`);
     const { data } = await res.data;
     return { notes: data }
 }
