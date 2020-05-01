@@ -12,6 +12,7 @@
 # next.js
 /.next/
 /out/
+/nextt.config.js
 
 # production
 /build
