@@ -64,7 +64,6 @@ class New extends Component {
             }
             console.log('1');
             await this.props.router.push('/');
-
         }
     };
 

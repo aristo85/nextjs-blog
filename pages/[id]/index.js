@@ -21,11 +21,19 @@ class Note extends Component {
 
     componentDidUpdate() {
         if (this.state.isDeleting) {
-            const pid = this.props.router.query.id;
-            axios.delete(`${process.env.URI}/api/notes/${pid}`);
-            this.props.router.push('/');//sd
+            this.deleteNote();
         }
     }
+
+    deleteNote = async () => {
+        const pid = this.props.router.query.id;
+        try {
+            await axios.delete(`/api/notes/${pid}`);
+        }catch (e) {
+            console.log(e);
+        }
+        await this.props.router.push('/');
+    };
 
     handleDelete = () => {
         this.setState({
