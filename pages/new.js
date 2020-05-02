@@ -51,20 +51,20 @@ class New extends Component {
     };
 
     componentDidUpdate() {
-        this.createNote();
+        if (this.state.isSubmitting) {
+            this.createNote();
+        }
     }
 
     createNote = async () => {
-        if (this.state.isSubmitting) {
-            let dataToSubmit = {title: this.state.title, description: this.state.description};
-            try {
-                await axios.post('/api/notes', dataToSubmit);
-            }catch (e) {
-                console.log(e);
-            }
-            console.log('1');
-            await this.props.router.push('/');
+        let dataToSubmit = {title: this.state.title, description: this.state.description};
+        try {
+            await axios.post('/api/notes', dataToSubmit);
+        }catch (e) {
+            console.log(e);
         }
+        console.log('1');
+        await this.props.router.push('/');
     };
 
     render() {

@@ -27,13 +27,13 @@ const Index = ({notes}) => {
                                     <Row>
                                         <Col xs="6">
                                             <Link href="/[id]" as={`/${note._id}`}>
-                                            <Button block color="primary">View</Button>
+                                                <Button block color="primary">View</Button>
                                             </Link>
                                         </Col>
                                         <Col>
-                                            {/*<Link href="/[id]/edit" as={`/${note._id}/edit`}>*/}
-                                            <Button block color="primary">Edit</Button>
-                                            {/*</Link>*/}
+                                            <Link href="/[id]/edit" as={`/${note._id}/edit`}>
+                                                <Button block color="primary">Edit</Button>
+                                            </Link>
                                         </Col>
                                     </Row>
                                 </CardBody>
