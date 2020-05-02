@@ -26,9 +26,9 @@ const Index = ({notes}) => {
                                     </CardTitle>
                                     <Row>
                                         <Col xs="6">
-                                            {/*<Link href="/[id]" as={`/${note._id}`}>*/}
+                                            <Link href="/[id]" as={`/${note._id}`}>
                                             <Button block color="primary">View</Button>
-                                            {/*</Link>*/}
+                                            </Link>
                                         </Col>
                                         <Col>
                                             {/*<Link href="/[id]/edit" as={`/${note._id}/edit`}>*/}
