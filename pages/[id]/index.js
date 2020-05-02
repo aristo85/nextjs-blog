@@ -22,7 +22,7 @@ class Note extends Component {
     componentDidUpdate() {
         if (this.state.isDeleting) {
             const pid = this.props.router.query.id;
-            axios.delete(`${process.env.URI}/api/notes/${pid}`);
+            axios.delete(`/api/notes/${pid}`);
             this.props.router.push('/');
         }
     }
